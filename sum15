@@ -1,0 +1,51 @@
+#List down the differences between String and StringBuffer class .
+
+package Assesement2;
+
+import java.util.Scanner;
+
+public class StringAndStringBuffer {
+    public String stringMethod(String s,String ss){
+        /*STRING
+        * The String class is immutable.
+        *String class uses String constant pool.
+        * */
+        int s1=s.hashCode();
+        int s2=ss.hashCode();
+        System.out.println("String str1:"+s1);
+        System.out.println("string str2:"+s2);
+        System.out.println(s.concat(ss));
+        System.out.println(s);
+        return s;
+    }
+    public StringBuffer BufferMethod(StringBuffer s,StringBuffer ss){
+        /*STRING BUFFER
+        * The String Buffer class is mutable.
+        * StringBuffer uses Heap memory.
+        **/
+        int A1=s.hashCode();
+        int A2=ss.hashCode();
+        System.out.println("String buffer str1:"+A1);
+        System.out.println("String buffer str2:"+A2);
+        System.out.println(ss.append(s));
+        System.out.println(ss);
+        return s;
+    }
+    public static void main(String []args){
+        StringAndStringBuffer obj=new StringAndStringBuffer();
+        Scanner s=new Scanner(System.in);
+        String str1,str2;
+        str1="zoho";
+        str2="zoho";
+
+        //String
+        obj.stringMethod(str1,str2);
+
+        //String Buffer
+        StringBuffer a=new StringBuffer("zoho");
+        StringBuffer b=new StringBuffer("zoho");
+        obj.BufferMethod(a,b);
+
+
+    }
+}
